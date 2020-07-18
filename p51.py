@@ -17,17 +17,12 @@ def primeFamily(prime, digits_to_replace):
 
 def getAnswer():
 	maxi = 0
-	for prime in primes_to_iterate[1616:]:
+	for prime in primes_to_iterate:
 		currIndex = primes_to_iterate.index(prime)
 		for i in range(1, 4):
 			combos_to_replace = list(itertools.combinations([j for j in range(1, len(str(prime)))], i))
 			for combo in combos_to_replace:
-				if len(primeFamily(prime, combo)) > maxi:
-					maxi = len(primeFamily(prime, combo))
-					print('\n--------',prime,'----------')
-					print(combo, ': ', primeFamily(prime, combo))
-					print('length: ', maxi)
 				if len(primeFamily(prime, combo)) == 8:
 					return min(primeFamily(prime, combo))
-
+# Takes way too long to get the answer
 print(getAnswer())
