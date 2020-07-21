@@ -5,7 +5,7 @@ def sameDigits(a, b):
 			check.remove(i)
 	return len(check) == 0
 
-# Gambling that the answer is within this range
+# Guessing that the answer is within this range
 for i in range(1, 100000):
 	good = '1' + str(i)
 	check = int(good)
